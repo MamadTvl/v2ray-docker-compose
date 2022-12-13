@@ -15,8 +15,8 @@ uuid = config['inbounds'][0]['settings']['clients'][0]['id']
 domain = input('enter your domain (example.com)')
 
 j = json.dumps({
-    "v": "2", "ps": f"<{domain}>", "add": f"<{domain}>", "port": "443", "id": uuid, "aid": "0", "net": "ws", "type": "none",
-    "host": f"<{domain}>", "path": "/ws", "tls": "tls"
+    "v": "2", "ps": domain, "add": domain, "port": "443", "id": uuid, "aid": "0", "net": "ws", "type": "none",
+    "host": domain, "path": "/ws", "tls": "tls"
 })
 
 print("vmess://" + base64.b64encode(j.encode('ascii')).decode('ascii'))
